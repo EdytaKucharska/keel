@@ -39,6 +39,14 @@ The output is a **build map**, not a verdict. The map's purpose is to give the f
 
 **Be willing to say "you don't have enough yet."** Sometimes the right output is *"the idea is too vague to scope. Tell me more about [specific thing] and we'll have something to work with."* This is honest and saves the founder weeks of building the wrong thing.
 
+## The Keel ledger (project memory)
+
+> Full protocol: `../../ledger/README.md`. This section is the per-skill contract.
+
+**At the start (repo-aware surface only):** check for `.keel/` in the project root. If `.keel/profile.md` exists, read it and **skip every context question it already answers** — re-asking a recorded segment or commercial model is the most annoying failure available; if the conversation contradicts the profile, confirm and update it rather than silently believing either. If `.keel/assumptions.md` exists, scan the open entries: if anything in this conversation fires a recorded revisit-trigger, surface it once, briefly, before the main analysis.
+
+**At the end (after a substantive recommendation):** append the decision to `.keel/decisions.md` (choice, rejected alternatives, one-paragraph reasoning) and each load-bearing assumption to `.keel/assumptions.md` with its revisit-trigger, status `open`. If there is no `.keel/` yet, offer once to create it from `ledger/templates/`; respect a no. On the conversational surface (no filesystem), skip all of this silently.
+
 ## Before you start: check for a handoff, confirm the segment, then gather context
 
 ### Intake — are you receiving a handoff?

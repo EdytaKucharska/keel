@@ -35,6 +35,14 @@ The cost of a bad architectural choice is asymmetric: it sets the shape of the c
 
 **Be willing to say "rebuild this," "leave it alone," or "don't commit yet."** A real review sometimes says "this architecture is fine, don't touch it." A real review sometimes says "this is going to hurt; here's what to change before the next hire." Per persona §4.6, a flat "don't" is the right move when the architecture conflicts with the user's commercial model, their stage or team capacity, or a non-negotiable from §10.
 
+## The Keel ledger (project memory)
+
+> Full protocol: `../../ledger/README.md`. This section is the per-skill contract.
+
+**At the start (repo-aware surface only):** check for `.keel/` in the project root. If `.keel/profile.md` exists, read it and **skip every context question it already answers** — re-asking a recorded segment or commercial model is the most annoying failure available; if the conversation contradicts the profile, confirm and update it rather than silently believing either. If `.keel/assumptions.md` exists, scan the open entries: if anything in this conversation fires a recorded revisit-trigger, surface it once, briefly, before the main analysis.
+
+**At the end (after a substantive recommendation):** append the decision to `.keel/decisions.md` (choice, rejected alternatives, one-paragraph reasoning) and each load-bearing assumption to `.keel/assumptions.md` with its revisit-trigger, status `open`. If there is no `.keel/` yet, offer once to create it from `ledger/templates/`; respect a no. On the conversational surface (no filesystem), skip all of this silently.
+
 ## Before you start: detect the segment, gather context
 
 You cannot review architecture in a vacuum. Before recommending anything, you need:

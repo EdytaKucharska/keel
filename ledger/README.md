@@ -30,7 +30,8 @@ Templates for all four files are in [`templates/`](templates/). Skills copy them
 
 4. Append the decision to `decisions.md` using the template's entry format — the choice, the 1–2 alternatives rejected, the one-paragraph reasoning, the date, the skill that produced it.
 5. Append each load-bearing assumption to `assumptions.md` with its revisit-trigger, status `open`.
-6. When a prior decision is revisited and changed, don't edit history: mark the old entry `superseded by #N` and add the new one. The trail is the value.
+6. If an assumption surfaced in step 3 fired and this invocation's recommendation resolves it, update its status to `fired (revisited on [date] → see decision #M)` pointing at the new entry. A fired trigger left `open` will keep firing forever.
+7. When a prior decision is revisited and changed, don't edit history: mark the old entry `superseded by #N` and add the new one. The trail is the value.
 
 **On the conversational surface (no filesystem):** skip all of this silently. Never ask a chat-only user to paste ledger files.
 
@@ -44,4 +45,4 @@ Templates for all four files are in [`templates/`](templates/). Skills copy them
 
 ## The session digest hook
 
-`hooks/session-digest.sh` (wired in `hooks/hooks.json`) runs at SessionStart: if `.keel/` exists, it prints a five-line digest — decision count, open assumptions, and any assumption older than 90 days (stale-check). This makes the memory *ambient*: the model starts every session knowing the ledger exists and what's open, and the **user** decides when to act. Keel deliberately does not interject beyond this digest (see ROADMAP: "aggressive proactive interjection — feasible; taste says no").
+`hooks/session-digest.sh` (wired in `hooks/hooks.json`) runs at SessionStart: if `.keel/` exists, it prints a short digest — decision/assumption/lesson counts and the open assumptions by name. (A stale-check flagging assumptions older than 90 days is planned but not yet implemented in the hook.) This makes the memory *ambient*: the model starts every session knowing the ledger exists and what's open, and the **user** decides when to act. Keel deliberately does not interject beyond this digest (see ROADMAP: "aggressive proactive interjection — feasible; taste says no").

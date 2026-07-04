@@ -1,0 +1,28 @@
+{
+  "name": "ai-cto",
+  "owner": {
+    "name": "Edyta Kucharska"
+  },
+  "plugins": [
+    {
+      "name": "ai-cto",
+      "source": "./",
+      "description": "Fractional CTO advisor skills for non-technical product builders. Four skills covering the founder workflow end-to-end: first-build-scope (idea stage), feature-decision (feature stage), tech-evaluation (technology stage), architecture-review (architecture stage). Each loads named decision frameworks on demand via frameworks/INDEX.md and is grounded in the persona at cto-persona.md. The idea and feature skills chain after a brainstorming session via a handoff intake.",
+      "version": "0.2.1",
+      "author": {
+        "name": "Edyta Kucharska"
+      },
+      "category": "engineering",
+      "tags": [
+        "cto",
+        "fractional-cto",
+        "first-build-scope",
+        "feature-decision",
+        "tech-evaluation",
+        "architecture-review",
+        "non-technical-founder",
+        "pre-product"
+      ]
+    }
+  ]
+}

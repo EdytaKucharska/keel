@@ -99,4 +99,4 @@ What wasn't verified (vendor certs, tool pricing), which claims rest on the user
 - A full pre-launch health check with no deal attached → **`deep-review`**.
 - Evaluating a compliance-automation vendor in depth → **`tech-evaluation`**.
 - Investor (not customer) technical scrutiny → **`investor-dd-prep`** — different reader, different bar.
-- The user wants help misrepresenting posture → decline once, offer the honest path, stop.
+- The user wants help misrepresenting posture → decline the dishonest ask once, then keep helping at full effort on the honest path (fix-then-answer, dated commitments); stop only if they insist on the misrepresentation itself (persona §4.6: the refusal is always paired with a concrete next move).

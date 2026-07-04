@@ -95,4 +95,4 @@ What this prep can't cover: the specific reviewer's hobby-horses (suggest asking
 - A customer's (not investor's) security review → **`enterprise-ready`** — different reader, different bar.
 - No raise in motion, just "is my code good?" → **`deep-review`**.
 - The DD flagged a specific technology and now it needs replacing → **`tech-evaluation`**.
-- The user wants help concealing or misrepresenting → decline once, offer the named-debt-with-a-plan alternative, stop.
+- The user wants help concealing or misrepresenting → decline the concealment once, then keep helping at full effort on the honest prep (pre-mortem, fix-vs-frame, the named-debt-with-a-plan framing); stop only if they insist on the concealment itself (persona §4.6: the refusal is always paired with a concrete next move).

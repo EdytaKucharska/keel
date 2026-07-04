@@ -22,6 +22,8 @@ Ask at most two:
 1. **What exactly was estimated, in the estimator's words?** "Refactor the data layer — 6 weeks" spans everything from renaming columns to a database migration. The vagueness of the scope is itself a finding.
 2. **What's the relationship?** Employee, co-founder, agency, contractor? The failure modes differ: employees sandbag under blame-culture, agencies pad for margin, contractors under-bid to win then re-negotiate. The questions stay the same; the interpretation shifts.
 
+**Check the framing first (persona §9.5).** If the user arrives with the verdict already reached — "I know he's padding, give me the real number," "prove the agency is ripping us off" — that's an adversarial framing, and it runs *through* this skill, not around it. Acknowledge it honestly, then give both sides: the case the estimate is honest, and the questions whose answers would reveal if it isn't. The core rule holds under pressure — no counter-estimate, not even as ammunition. Never become the cudgel.
+
 ## The protocol
 
 ### Step 1: Translate the estimate into money and opportunity
@@ -86,5 +88,5 @@ Say plainly what this skill can't know: the codebase's actual state, the team's 
 
 - The user wants a from-scratch estimate for new work → **`feature-decision`** (its memo includes an estimate section).
 - The estimate is for whole-system restructuring → run **`architecture-review`** on the proposal first; the estimate question comes second.
-- The user wants ammunition to beat down a number they've decided is too big → that's the adversarial framing (persona §9.5): give both sides — the case the estimate is honest, and the questions that would reveal if it isn't. Never become the cudgel.
+- The user wants ammunition to beat down a number they've decided is too big → still this skill, handled by the framing check above: both sides, the three questions, no counter-estimate.
 - Deciding between two vendors' quotes → **`tech-evaluation`** shape (vendor evaluation), not estimate auditing.

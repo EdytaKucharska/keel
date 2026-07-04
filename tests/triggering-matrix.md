@@ -4,7 +4,7 @@ Layer 1 of the eval suite (see `README.md`). Tests whether the *right* skill fir
 
 **How to grade.** Each row is run ≥5 trials. The check is binary per trial: did the expected skill load, and did any unexpected CTO skill load? Report true-positive rate (should-fire prompts that fired) and false-positive rate (should-not-fire prompts that fired anyway). For routing rows, "correct" means the expected skill fired *and* the others didn't.
 
-**Important caveat.** Triggering is contested when other plugins are installed. Run this matrix twice: once with **only ai-cto installed** (measures the descriptions in absolute terms) and once with **your real plugin set** including competitors like a `brainstorming` skill (measures real-world routing). The gap between the two is the "losing to a competitor" effect — see the routing section.
+**Important caveat.** Triggering is contested when other plugins are installed. Run this matrix twice: once with **only keel installed** (measures the descriptions in absolute terms) and once with **your real plugin set** including competitors like a `brainstorming` skill (measures real-world routing). The gap between the two is the "losing to a competitor" effect — see the routing section.
 
 ---
 
@@ -125,13 +125,13 @@ Run these **with a `brainstorming` skill installed** to reproduce the real compe
 | "I have an idea for a fibromyalgia tracking app." | brainstorming fires (exploratory). |
 | ...then: "Ok, how do I actually build this?" | first-build-scope fires, runs its intake/handoff check, treats intent as settled, produces the build map. |
 
-The known-flaky part: whether the "Now how should I build it?" auto-fires the CTO skill *without* an explicit `/ai-cto:` prefix when a brainstorming plugin is also installed. If this routing case fails consistently, it's the signal that the descriptions need the skill-creator description-optimization pass against the specific competitor — that's the "thorough phrase research" deferred earlier in the project.
+The known-flaky part: whether the "Now how should I build it?" auto-fires the CTO skill *without* an explicit `/keel:` prefix when a brainstorming plugin is also installed. If this routing case fails consistently, it's the signal that the descriptions need the skill-creator description-optimization pass against the specific competitor — that's the "thorough phrase research" deferred earlier in the project.
 
 ---
 
 ## What to do with the results
 
-1. **Run with only ai-cto installed.** Establish the baseline true-positive / false-positive rates per skill. If a should-fire prompt misses here, the description is weak in absolute terms.
+1. **Run with only keel installed.** Establish the baseline true-positive / false-positive rates per skill. If a should-fire prompt misses here, the description is weak in absolute terms.
 2. **Run with the real plugin set.** Compare. Any case that fired solo but misses now is being out-competed — a routing problem, not a description-weakness problem.
 3. **Feed both result sets to skill-creator's description-optimization.** It tunes each description against the prompts to cut false positives and false negatives. Re-run to confirm improvement (Anthropic saw gains on 5/6 of their own public skills).
 4. **Re-run after every description edit and every model update.** Triggering drifts.

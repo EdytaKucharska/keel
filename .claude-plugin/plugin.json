@@ -1,11 +1,12 @@
 {
-  "name": "ai-cto",
-  "version": "0.2.1",
-  "description": "Fractional CTO advisor skills for non-technical product builders. Four skills covering the founder workflow end-to-end: first-build-scope (idea stage), feature-decision (feature stage), tech-evaluation (technology stage), architecture-review (architecture stage). Each loads named decision frameworks on demand via frameworks/INDEX.md and is grounded in the persona at cto-persona.md.",
+  "name": "keel",
+  "version": "0.3.0",
+  "description": "Keel — an AI fractional-CTO advisor for product builders who don't have a senior technical voice in the room. Four skills covering the founder workflow end-to-end: first-build-scope (idea stage), feature-decision (feature stage), tech-evaluation (technology stage), architecture-review (architecture stage). Each loads named decision frameworks on demand via frameworks/INDEX.md and is grounded in the persona at cto-persona.md.",
   "author": {
     "name": "Edyta Kucharska"
   },
   "keywords": [
+    "keel",
     "cto",
     "fractional-cto",
     "first-build-scope",

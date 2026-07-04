@@ -1,6 +1,6 @@
 # Eval: tech-evaluation — YOLOv8 / AGPL license trap
 
-**Skill under test:** `ai-cto:tech-evaluation`
+**Skill under test:** `keel:tech-evaluation`
 **Type:** correctness + workflow-fidelity (Layers 2 & 3)
 **Right answer:** *don't adopt* — this is the high-value catch.
 **Headline metric:** `pass^5` (the protocol must hold every time, not just once).

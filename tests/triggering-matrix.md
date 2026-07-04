@@ -102,6 +102,76 @@ Layer 1 of the eval suite (see `README.md`). Tests whether the *right* skill fir
 
 ---
 
+## deep-review
+
+### Should fire (true positives)
+
+| Prompt | Notes |
+|---|---|
+| "/keel:deep-review" | explicit invocation — the primary path |
+| "Is my app production-ready? Review the whole project." | comprehensive review request |
+| "Give my codebase a health check before launch." | full-pass request with a stake |
+| "What will break when I actually get users?" | load-shape phrasing inside a full-review ask |
+
+### Should NOT fire (true negatives)
+
+| Prompt | Why it shouldn't fire |
+|---|---|
+| "Review this PR" | PR review → ecosystem tool (CodeRabbit et al.), not Keel |
+| "Should I use Postgres or Mongo?" | single tech → tech-evaluation |
+| "Is my auth setup okay?" | narrow hygiene question — offer deep-review, don't auto-run it |
+
+## enterprise-ready
+
+### Should fire (true positives)
+
+| Prompt | Notes |
+|---|---|
+| "Our first enterprise customer sent a 200-question security questionnaire." | canonical trigger |
+| "The prospect's procurement is asking if we have SOC 2." | the make-or-break ask |
+| "We want to move upmarket next year — what will security teams demand?" | preparation mode |
+
+### Should NOT fire (true negatives)
+
+| Prompt | Why it shouldn't fire |
+|---|---|
+| "Find security bugs in my code" | scanning → prescribe /security-review |
+| "An investor wants to review our tech" | investor reader → investor-dd-prep |
+
+## estimate-check
+
+### Should fire (true positives)
+
+| Prompt | Notes |
+|---|---|
+| "Our lead engineer says the data-layer refactor is 6 weeks. Is that real?" | canonical (persona worked dialogue 3) |
+| "The agency quoted 3 months for this feature." | agency variant |
+| "My dev says we can't ship without rebuilding X first." | estimate wearing a dependency claim |
+
+### Should NOT fire (true negatives)
+
+| Prompt | Why it shouldn't fire |
+|---|---|
+| "How long would it take to build export-to-CSV?" | from-scratch estimate → feature-decision |
+| "Is my engineer any good?" | people judgment — out of scope (persona §14.1) |
+
+## investor-dd-prep
+
+### Should fire (true positives)
+
+| Prompt | Notes |
+|---|---|
+| "We got a term sheet — their technical advisor wants to see the codebase." | canonical trigger |
+| "What will investors look at in our tech during diligence?" | preparation mode |
+| "How do I explain that most of our code is AI-generated to a VC?" | the AI-story subcase |
+
+### Should NOT fire (true negatives)
+
+| Prompt | Why it shouldn't fire |
+|---|---|
+| "A customer wants our security posture" | customer reader → enterprise-ready |
+| "Make my pitch deck better" | not technical DD |
+
 ## Routing / competition (the hard layer)
 
 These cases test whether the *right* skill fires when several could plausibly apply. "Correct" = expected skill fires, others don't.
@@ -113,6 +183,9 @@ These cases test whether the *right* skill fires when several could plausibly ap
 | "Should we use X or Y for [feature]?" | tech-evaluation | named-tech comparison wins over feature-decision |
 | "Should we restructure the whole system into services?" | architecture-review | system shape wins over feature-decision |
 | "I'm going to use YOLOv8 in my new app idea" | tech-evaluation OR first-build-scope | ambiguous — name a tech AND pre-product. Document which one you want to win; this is a description-tuning decision |
+| "Audit our security before the enterprise deal" | enterprise-ready | deal context wins over deep-review (whole-project) and /security-review prescription happens inside the skill |
+| "Review my whole app — investors are coming" | investor-dd-prep | the reader (investor) wins over deep-review; dd-prep reuses deep-review findings via the ledger |
+| "Is 6 weeks right for adding team workspaces?" | estimate-check | an estimate exists → check it; feature-decision only if asked to design the approach |
 
 ### Brainstorm handoff cases (multi-plugin)
 

@@ -437,6 +437,18 @@ The skills listed below the v1 cut are the **post-v1 backlog**. They remain genu
 - `cto-second-opinion` — A general-purpose entry point. The user describes a decision; the AI CTO routes to the most appropriate Tier 1/2 skill, or asks the small number of clarifying questions needed to route.
 - `scope-clarifier` — Handles the front-of-conversation moment when the user's request is too vague to act on. Always returns 1–3 clarifying questions, never an unsolicited deep dive.
 
+### Post-v1 additions (v0.4–v0.6)
+
+Four skills and one structural layer were added after the v1 cut, all persona-derived:
+
+- **The ledger** (v0.4, `ledger/README.md`) — per-project decision memory (`.keel/`): profile, decisions, assumptions-with-triggers, lessons. It operationalises §4.4's "bookmark" framing: load-bearing assumptions now persist and are checked on every invocation. All skills inherit the ledger contract.
+- **`deep-review`** (v0.5) — the repo-aware flagship: hygiene + security-posture + load-shape + cost in one explicitly-invoked pass, one ranked report. Absorbs the parked `tech-hygiene-audit` spine. Exists as ONE skill deliberately — routing degradation is the project's most persistent failure mode.
+- **`enterprise-ready`** (v0.6) — the customer-procurement money-moment (security questionnaires, SOC 2 timing). Unbreakable rule: never help answer a questionnaire dishonestly.
+- **`estimate-check`** (v0.6) — §7 worked dialogue 3 promoted to a skill; arms the PM/founder with the three questions that make an estimate auditable. Never counter-estimates.
+- **`investor-dd-prep`** (v0.6) — the fundraise money-moment; DD as a self-awareness test; fix-vs-frame; the honest AI-assisted-development story.
+
+These follow a shared boundary codified in `ecosystem-tools.md`: **prescribe, don't rebuild** — Keel routes users to first-party/best-in-class tools (e.g. `/security-review` for scanning) and owns the stage-aware interpretation layer.
+
 The Tier 1 set is enough to deliver on the project description ("technical decisions on architecture, product tech hygiene, technical approach for new features, infrastructure cost assessment"). Tier 2 deepens specific cuts. Tier 3 makes the product easy to enter.
 
 **Segment detection in skills.** Each skill should detect the user's segment in its opening moves rather than assuming one. The cheap heuristic is two questions: "Do you have a shipped artifact / running system, or are you evaluating a proposal?" and "Is there an engineering team, or is it you (and AI tools)?" Vibe coders answer "yes / just me." PMs answer "evaluating proposal / there's a team I don't run." Founders-with-juniors answer "shipped / small team I run." Where detection is ambiguous, the skill asks one clarifying question rather than defaulting to a segment.

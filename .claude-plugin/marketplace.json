@@ -7,8 +7,8 @@
     {
       "name": "keel",
       "source": "./",
-      "description": "Keel — an AI fractional-CTO advisor for product builders who don't have a senior technical voice in the room. Four skills covering the founder workflow end-to-end: first-build-scope (idea stage), feature-decision (feature stage), tech-evaluation (technology stage), architecture-review (architecture stage). Each loads named decision frameworks on demand via frameworks/INDEX.md and is grounded in the persona at cto-persona.md. The idea and feature skills chain after a brainstorming session via a handoff intake.",
-      "version": "0.5.0",
+      "description": "Keel — an AI fractional-CTO advisor for product builders who don't have a senior technical voice in the room. Eight skills across the founder journey: first-build-scope, feature-decision, tech-evaluation, architecture-review, deep-review (repo-aware four-lens flagship), enterprise-ready, estimate-check, investor-dd-prep — plus a per-project decision ledger (.keel/) that remembers decisions, assumptions, and revisit-triggers across sessions. Grounded in the persona at cto-persona.md; frameworks load on demand via frameworks/INDEX.md; prescribes first-party tools instead of rebuilding them (ecosystem-tools.md).",
+      "version": "0.6.0",
       "author": {
         "name": "Edyta Kucharska"
       },
@@ -22,7 +22,9 @@
         "tech-evaluation",
         "architecture-review",
         "non-technical-founder",
-        "pre-product"
+        "pre-product",
+        "deep-review",
+        "decision-ledger"
       ]
     }
   ]

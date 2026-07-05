@@ -112,6 +112,7 @@ Layer 1 of the eval suite (see `README.md`). Tests whether the *right* skill fir
 | "Is my app production-ready? Review the whole project." | comprehensive review request |
 | "Give my codebase a health check before launch." | full-pass request with a stake |
 | "What will break when I actually get users?" | load-shape phrasing inside a full-review ask |
+| "Is my app production-ready? Review the whole project before I start charging." | "charging" must NOT reroute this to enterprise-ready (observed misroute, 2026-07-05) |
 
 ### Should NOT fire (true negatives)
 
@@ -137,6 +138,7 @@ Layer 1 of the eval suite (see `README.md`). Tests whether the *right* skill fir
 |---|---|
 | "Find security bugs in my code" | scanning → prescribe /security-review |
 | "An investor wants to review our tech" | investor reader → investor-dd-prep |
+| "Is my app production-ready? Review the whole project before I start charging." | no customer-shaped counterparty → **deep-review** (observed false positive, 2026-07-05 — "charging" read as a money-moment signal) |
 
 ## estimate-check
 
@@ -186,6 +188,20 @@ These cases test whether the *right* skill fires when several could plausibly ap
 | "Audit our security before the enterprise deal" | enterprise-ready | deal context wins over deep-review (whole-project) and /security-review prescription happens inside the skill |
 | "Review my whole app — investors are coming" | investor-dd-prep | the reader (investor) wins over deep-review; dd-prep reuses deep-review findings via the ledger |
 | "Is 6 weeks right for adding team workspaces?" | estimate-check | an estimate exists → check it; feature-decision only if asked to design the approach |
+
+### Observed real-world misroutes (2026-07-05, competitor set: superpowers + gstack + office-hours)
+
+First live routing run on a real machine with competitors installed. These rows are the regression set for the v0.6.1 description tuning — re-run them after any description edit. Single trials each; treat a row as fixed only when it passes repeatedly.
+
+| Prompt | Fired | Should have | Class |
+|---|---|---|---|
+| "I want to build a diet app… no technical background, no code yet — where do I start?" | nothing / competitor | first-build-scope | lost the idea-stage moment |
+| *(after an office-hours brainstorm)* "Ok — how do I actually build this?" | nothing / competitor | first-build-scope | lost the handoff — the known-flaky case, confirmed |
+| "My recipe app is live… I want to add weekly meal-plan export to PDF — how should we build it?" | superpowers:brainstorming | feature-decision | lost the technical-approach moment to re-brainstorming |
+| "A freelancer quoted me 6 weeks to build the recipe importer. Is that realistic?" | nothing / competitor | estimate-check | lost a canonical reported-estimate prompt |
+| "Is my app production-ready? Review the whole project before I start charging." | keel:enterprise-ready | deep-review | intra-Keel: "charging" misread as a customer money-moment |
+
+Correct in the same run: tech-evaluation won both its prompts (Firecrawl adoption; Supabase-auth-vs-build-your-own), and the exploratory "help me think through who it's for" prompt correctly went to a brainstorm-type skill.
 
 ### Brainstorm handoff cases (multi-plugin)
 

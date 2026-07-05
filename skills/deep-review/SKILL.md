@@ -72,7 +72,7 @@ Decompose the current and projected bill (unit-economics decomposition — load 
 
 Merge all four lenses into a single ranked list. The ranking function is **blast radius at the user's stated stage and stake**, not severity-in-the-abstract: data loss and secrets beat everything; then whatever the imminent stake makes urgent; then interest-bearing debt (compounds); then patient debt (sits). Every item gets: what / why-it-matters-here / specific fix / effort / needed-yesterday or defer-with-trigger.
 
-Cap the list at **10 items**. A 40-finding report is a report nobody acts on; findings 11+ go in one summary line ("also noted, not urgent: …"). Then collapse the needed-yesterday items into a **two-week plan** (week 1: non-negotiables; week 2: next layer), honest about effort.
+Cap the list at **10 items**. A 40-finding report is a report nobody acts on; findings 11+ go in one summary line ("also noted, not urgent: …"). Then collapse the needed-yesterday items into a **two-week plan** (week 1: non-negotiables; week 2: next layer), honest about effort. A clean review yields a short plan — a plan padded to fill two weeks is a manufactured finding in disguise.
 
 ### Step 7: Say what's sound
 

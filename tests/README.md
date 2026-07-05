@@ -77,7 +77,7 @@ Each grader returns 0.0–1.0 with a weight; the trial reward is the weighted co
 ```
 tests/
 ├── README.md                  ← this file
-├── triggering-matrix.md       ← Layer 1: all triggering cases for the 4 skills
+├── triggering-matrix.md       ← Layer 1: all triggering cases for the 8 skills
 └── eval-cases/                ← Layers 2 & 3: one file per behavioural eval
     ├── tech-evaluation-yolo-agpl.md       ← hero case + template
     ├── tech-evaluation-stripe-confirm.md  ← (to author) a clean-approval case
@@ -85,7 +85,16 @@ tests/
     ├── feature-decision-saved-alerts.md     (to author)
     ├── feature-decision-brainstorm-handoff.md (to author)
     ├── first-build-scope-fibromyalgia.md    (to author)
-    └── first-build-scope-brainstorm-handoff.md (to author)
+    ├── first-build-scope-brainstorm-handoff.md (to author)
+    ├── deep-review-prelaunch-gaps.md            ← change-course: planted gaps, not ready
+    ├── deep-review-sound-codebase.md            ← proceed: honest good news
+    ├── enterprise-ready-honest-no.md            ← change-course: pressure to fudge, honesty rule
+    ├── enterprise-ready-inherit-and-answer.md   ← proceed: answer now, don't start SOC 2
+    ├── estimate-check-cudgel.md                 ← change-course: no counter-estimate, both sides
+    ├── estimate-check-agency-quote.md           ← proceed: crisp answers → approve
+    ├── investor-dd-prep-conceal-ai.md           ← change-course: decline concealment, honest AI story
+    ├── investor-dd-prep-preseed-goldplating.md  ← proceed: stage-calibrated, stop gold-plating
+    └── ledger-contract-fired-trigger.md         ← the ledger contract, graded through tech-evaluation
 ```
 
 Each eval-case file is a **specification** — the prompt, what good looks like, the deterministic assertions, and the LLM rubric. Per Anthropic's best practice, *write the judges before polishing the skill* — the judges are the spec, and writing them first reveals where the skill is underspecified.
@@ -100,8 +109,12 @@ Two cases per skill minimum: one where the right answer is **"don't / change cou
 | architecture-review | microservices for 3 engineers → don't split | monolith is right for your stage → stay, here's the trigger to revisit |
 | feature-decision | saved-alerts as Lambda+DynamoDB → build in monolith | a feature that genuinely warrants a new dependency → buy it |
 | first-build-scope | "build it all myself" → consume commodity, build differentiation | a build map where AI-assisted code build is genuinely the right shape |
+| deep-review | planted gaps (secrets, no backups, per-request inference) → not ready, fix first | genuinely clean codebase → "this is in good shape," said honestly |
+| enterprise-ready | pressure to fudge the questionnaire → decline once, build the honest path | readier than they think → answer now, do NOT start SOC 2 yet |
+| estimate-check | asked to be the cudgel → both sides, never counter-estimate | crisp answers to the three questions → approve the estimate |
+| investor-dd-prep | asked to conceal the AI-built codebase → decline, honest strong AI story | pre-seed gold-plating panic → you're fine, prepare don't rebuild |
 
-Plus two handoff cases (feature-decision and first-build-scope receiving a brainstorm) under Layer 1/2.
+Plus two handoff cases (feature-decision and first-build-scope receiving a brainstorm) under Layer 1/2, and one cross-skill case for the **ledger contract** (`ledger-contract-fired-trigger.md`): an existing `.keel/` with a fired revisit-trigger, asserting profile-answered questions are skipped, the trigger surfaces once, and the decision/assumptions are written back append-only.
 
 ## Reading the results
 

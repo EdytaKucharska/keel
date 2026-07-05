@@ -78,6 +78,26 @@ A CTO's judgment includes knowing what *not* to build. [`ecosystem-tools.md`](ec
 - **Vendor setup** → Railway, Supabase, and friends ship their own agent skills. Keel advises *which* vendor; theirs does the wiring.
 - **Coding standards** → a different product for a different user.
 
+## Living with other plugins (routing)
+
+Skills from every installed plugin compete for the same prompts, and Keel deliberately plays one specific position: **brainstorm-type skills** (superpowers' `brainstorming`, gstack's office-hours) own the *"what should this be?"* moment; **Keel owns "how should we build it?"** and takes the handoff instead of re-exploring. That chain is by design (persona §12) — let the brainstorm clarify intent, then bring Keel in for the technical shape.
+
+In practice, some plugins claim more than their moment. Superpowers, for example, injects a session-level mandate at every SessionStart — *"'Let's build X' requires brainstorming first… if a skill applies, you do not have a choice"* — which no skill description can outrank, so Keel's build-question triggers can lose even on their own phrasing. Two reliable fixes:
+
+1. **Explicit invocation always wins:** `/keel:first-build-scope`, `/keel:deep-review`, etc.
+2. **A routing rule in your `~/.claude/CLAUDE.md`** — user instructions outrank every plugin's skills (superpowers' own injected rules say so explicitly):
+
+```markdown
+Routing rule for technical decisions: when the question is HOW to build
+something (first-build technical shape, feature approach, technology choice,
+architecture, an engineering estimate, production/enterprise/investor
+readiness), use the matching keel:* skill — brainstorming-type skills own
+the earlier WHAT-should-this-be exploration and hand off to keel for the
+build question. This preference takes precedence over skill descriptions.
+```
+
+Keel intentionally does **not** join the injection arms race by shouting its own mandate into every session (see ROADMAP: "aggressive proactive interjection — feasible; taste says no"). The routing choice stays yours.
+
 ## Under the hood
 
 - **[`cto-persona.md`](cto-persona.md)** — the source of truth. Values with observable behaviours, a phrasebook, worked dialogues, four user segments with adapted behaviour, rules for users who want validation instead of advice. Where a skill conflicts with the persona, the persona wins.
@@ -88,11 +108,11 @@ A CTO's judgment includes knowing what *not* to build. [`ecosystem-tools.md`](ec
 
 ## An example, compressed
 
-> **You:** I'm going to use YOLOv8 for detection in my SaaS. Paid, hosted by me.
+> **You:** I want to build a diet app. The idea: it collects recipes from popular cooking websites, and then adjusts them to my dietary needs — calories, allergies, ingredients I don't eat. I'd pay for something like this myself. I don't have a technical background and there's no code yet — where do I start?
 >
-> **Keel** (tech-evaluation): Quick check — solo build or team? Working version or proposal? …Before anything else: I verified against the Ultralytics repo just now — YOLOv8 is **AGPL-3.0**. AGPL is a copyleft license that requires you to publish your source code if users access your software over a network — and "paid SaaS hosted by you" is exactly the case it's designed to catch. So this is a one-way door wearing two-way clothes: swapping models today is an afternoon; after eighteen months of building on its inference behaviour, it's a rewrite plus the legal exposure for the months you were non-compliant. Here are four alternatives that clear your commercial model — RT-DETR (Apache-2.0) is the sober pick, a managed API is the low-ops pick… *[assumptions and the decision land in `.keel/`]*
+> **Keel** (first-build-scope): One question before the map — is this a tool for yourself, or a product other people will pay for? I'm asking because the answer changes what's legal, not just what's sensible. …Assuming a paid product: the risky part of this idea isn't the app — it's **"collects recipes from popular cooking websites."** That sentence hides two traps: most recipe sites' terms of service prohibit scraping, and recipe *text* is copyrighted even where ingredient lists aren't — a product built on scraped content is a takedown letter waiting to happen, and scrapers quietly break every time a site redesigns. Three shapes avoid the trap entirely: licensed recipe APIs (consume), users importing their own recipes (also your cleanest data), or original content. Meanwhile the part that's actually *yours* — the differentiation worth building — is the adjustment engine: allergies, substitutions, calorie targets. Buy everything else; accounts, payments, and hosting are commodity. Here's the build map — four viable shapes, from no-code MVP to AI-assisted custom build, with what each costs and the cheapest test to run before any code exists… *[the shapes, the assumptions, and their revisit-triggers land in `.keel/`]*
 
-That intervention takes ten minutes. Migrating off YOLOv8 after a customer's lawyer finds it takes rather longer.
+That conversation happens before the first line of code — the only moment it's free. Discovering the scraping problem after launch, from a lawyer, costs rather more.
 
 ## License
 

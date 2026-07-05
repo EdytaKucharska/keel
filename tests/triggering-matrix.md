@@ -216,6 +216,8 @@ Run these **with a `brainstorming` skill installed** to reproduce the real compe
 
 The known-flaky part: whether the "Now how should I build it?" auto-fires the CTO skill *without* an explicit `/keel:` prefix when a brainstorming plugin is also installed. If this routing case fails consistently, it's the signal that the descriptions need the skill-creator description-optimization pass against the specific competitor — that's the "thorough phrase research" deferred earlier in the project.
 
+**Known ceiling on description tuning (2026-07-05, `.keel/lessons.md` L-2):** superpowers injects a SessionStart mandate ("'Let's build X' requires brainstorming first; if a skill applies you do not have a choice") into every session — a layer above descriptions, so these handoff rows can keep failing against it no matter how the descriptions are phrased. When grading against that competitor, run the matrix with and without the README's recommended CLAUDE.md routing rule; the with-rule numbers are the realistic ones for that plugin set.
+
 ---
 
 ## What to do with the results

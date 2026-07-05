@@ -17,7 +17,7 @@ If running a multi-turn variant, the follow-up answers are: scale today = ~20 be
 
 ## Fixture
 
-The trial runs in a small fixture repo (no `.keel/` directory) containing a plausible Claude-Code-generated Express + Postgres app with these planted issues:
+Committed at **`tests/fixtures/deep-review-prelaunch-gaps/`** — copy only that directory into a scratch workspace per trial (see `tests/fixtures/README.md`; the fixture files contain no eval annotations by design). The trial runs in a small fixture repo (no `.keel/` directory) containing a plausible Claude-Code-generated Express + Postgres app with these planted issues:
 
 - `.env` **committed to the repo** containing `OPENAI_API_KEY=sk-...` and `DATABASE_URL=...` (secrets in code).
 - **No backup configuration** anywhere — no provider backup notes, no restore drill, nothing in the README.

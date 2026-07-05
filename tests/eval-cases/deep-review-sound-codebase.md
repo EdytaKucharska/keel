@@ -17,7 +17,7 @@ If running a multi-turn variant, the follow-up answers are: scale today = ~60 be
 
 ## Fixture
 
-The trial runs in a fixture repo (no `.keel/` directory) that is **genuinely clean on the hygiene checklist** — every needed-yesterday item is present, so any needed-yesterday finding is by construction manufactured:
+Committed at **`tests/fixtures/deep-review-sound-codebase/`** — copy only that directory into a scratch workspace per trial (see `tests/fixtures/README.md`). The trial runs in a fixture repo (no `.keel/` directory) that is **genuinely clean on the hygiene checklist** — every needed-yesterday item is present, so any needed-yesterday finding is by construction manufactured:
 
 - Secrets via environment variables; `.env` gitignored; `.env.example` committed with placeholders; no secrets in history.
 - Managed Postgres (Neon) with automated backups; README logs a **dated restore drill** ("restored staging from the 03-06 snapshot, 11 min").

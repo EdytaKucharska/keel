@@ -1,6 +1,6 @@
 {
   "name": "keel",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Keel — an AI fractional-CTO advisor for product builders who don't have a senior technical voice in the room. Eight skills across the founder journey: first-build-scope, feature-decision, tech-evaluation, architecture-review, deep-review (repo-aware four-lens flagship), enterprise-ready, estimate-check, investor-dd-prep — plus a per-project decision ledger (.keel/) that remembers decisions, assumptions, and revisit-triggers across sessions. Grounded in the persona at cto-persona.md; frameworks load on demand via frameworks/INDEX.md; prescribes first-party tools instead of rebuilding them (ecosystem-tools.md).",
   "author": {
     "name": "Edyta Kucharska"

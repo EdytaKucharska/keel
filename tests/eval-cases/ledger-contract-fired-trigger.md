@@ -15,7 +15,7 @@ Structure copied from the template `tech-evaluation-yolo-agpl.md`.
 
 ## Fixture
 
-The trial runs in a fixture repo containing a `.keel/` ledger (built from `ledger/templates/`) with exactly this content. The prompt is designed to fire A-1's trigger twice over (8,000 > ~5,000 users AND search complaints).
+Committed at **`tests/fixtures/ledger-contract-fired-trigger/`** — the trial MUTATES `.keel/`, so each trial gets a fresh copy (see `tests/fixtures/README.md`). The trial runs in a fixture repo containing a `.keel/` ledger (built from `ledger/templates/`) with exactly this content. The prompt is designed to fire A-1's trigger twice over (8,000 > ~5,000 users AND search complaints).
 
 **`.keel/profile.md`:**
 

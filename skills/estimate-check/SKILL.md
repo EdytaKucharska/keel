@@ -40,6 +40,8 @@ Arm the user with these, phrased to take back to the estimator:
 
 Add the situational fourth where it fits: **"What would make this take twice as long?"** — honest estimators answer instantly (they know their risks); padded estimates have no doubling scenario because the padding *is* the doubling scenario.
 
+The three questions are the fixed core — do not substitute. Each audits something the others can't: the trigger question audits *necessity*, slicing audits *scope*, rollback audits *de-risking*. In particular, a work-decomposition question ("which piece is the long pole?") is not a replacement for the trigger question — it accepts that the work is needed and only probes its shape, which silently concedes the most important point. The doubling question is the only flex slot.
+
 ### Step 3: Interpret the answers, not the number
 
 Give the user the read-back key: crisp answers to all three → the estimate is probably real; approve it and record the scope. Crisp trigger, no slicing → real problem, possibly over-scoped solution; ask for the two-slice version. No trigger → the work is a preference; defer with a recorded trigger instead. Vague on everything → the estimate is a guess wearing a number; ask for a 2-day spike that produces a real estimate (spike-then-estimate is the respectful alternative to rejecting a number).

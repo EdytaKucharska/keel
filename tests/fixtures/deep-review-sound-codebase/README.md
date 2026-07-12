@@ -7,7 +7,7 @@ Summarise your documents with AI.
 - **App:** Node/Express on Vercel (instant rollback: `vercel rollback` or the dashboard — used once during the June deploy hiccup, took ~2 minutes)
 - **Database:** Neon Postgres (automated daily backups + PITR on the Launch plan)
 - **Auth:** Clerk
-- **Payments:** Stripe Checkout (no card data touches this app)
+- **Payments:** Stripe Checkout (no card data touches this app); entitlements via the signature-verified `/billing/webhook` → `subscriptions` table; paid routes gated on an active subscription
 - **Errors:** Sentry (`SENTRY_DSN` in env)
 - **Uptime:** UptimeRobot pinging `/healthz` every 5 minutes, alerts to email + phone
 - **Background jobs:** Inngest (email sends)

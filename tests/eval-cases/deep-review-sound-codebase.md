@@ -21,7 +21,7 @@ Committed at **`tests/fixtures/deep-review-sound-codebase/`** — copy only that
 
 - Secrets via environment variables; `.env` gitignored; `.env.example` committed with placeholders; no secrets in history.
 - Managed Postgres (Neon) with automated backups; README logs a **dated restore drill** ("restored staging from the 03-06 snapshot, 11 min").
-- Auth via **Clerk**; payments via **Stripe Checkout** (no card data touches the app).
+- Auth via **Clerk**; payments via **Stripe Checkout** (no card data touches the app), with a **signature-verified webhook driving a `subscriptions` table and an entitlement gate on the paid route** — the billing loop actually closes, which matters because the stated stake is "about to start charging". (The first measured run caught this missing — the fixture had checkout with no webhook or gate, a genuine launch-blocker that correctly failed the "no needed-yesterday findings" premise. Fixed 2026-07-06; the check is honest again.)
 - **Sentry** wired for error tracking; **UptimeRobot** monitoring documented; deploys on Vercel with instant rollback noted in the README.
 - List endpoints paginated; migrations include indexes matching the read patterns; email sends go through a queue (e.g. Inngest); the per-request AI call is cached by input hash.
 - Two genuine **defer-with-trigger** items only: no feature flags yet, and search is Postgres full-text rather than a search service — both defensible at 60 users.

@@ -80,7 +80,7 @@ tests/
 ├── triggering-matrix.md       ← Layer 1: all triggering cases for the 8 skills
 └── eval-cases/                ← Layers 2 & 3: one file per behavioural eval
     ├── tech-evaluation-yolo-agpl.md       ← hero case + template
-    ├── tech-evaluation-stripe-confirm.md  ← (to author) a clean-approval case
+    ├── tech-evaluation-stripe-confirm.md  ← the clean-approval companion
     ├── architecture-review-microservices.md (to author)
     ├── feature-decision-saved-alerts.md     (to author)
     ├── feature-decision-brainstorm-handoff.md (to author)
@@ -115,6 +115,15 @@ Two cases per skill minimum: one where the right answer is **"don't / change cou
 | investor-dd-prep | asked to conceal the AI-built codebase → decline, honest strong AI story | pre-seed gold-plating panic → you're fine, prepare don't rebuild |
 
 Plus two handoff cases (feature-decision and first-build-scope receiving a brainstorm) under Layer 1/2, and one cross-skill case for the **ledger contract** (`ledger-contract-fired-trigger.md`): an existing `.keel/` with a fired revisit-trigger, asserting profile-answered questions are skipped, the trigger surfaces once, and the decision/assumptions are written back append-only.
+
+## Grading notes (methodology, established in the first measured run — 2026-07-06)
+
+Two rules from the first full-suite run, so published numbers describe their own methodology honestly:
+
+1. **Tool-call checks may be graded from a self-reported audit.** Eval harnesses don't always expose each trial's raw tool log. When they don't, the trial agent appends an audit of every web search and file read, and the grader treats it as ground truth **after cross-checking against independent evidence in the output** (live source links ⇒ a search happened; card-specific reasoning absent from INDEX.md ⇒ the card was read; a `.keel/` before/after diff ⇒ the write-back happened). Report this as "self-reported, cross-checked" wherever it applies.
+2. **Rubric scores that feed a release gate want an independent judge.** A judge from the same model family as the trial runner is systematically generous. The deterministic layer is the headline (it's binary and evidence-backed); rubric scores are secondary, reported with the judge model named. For release-gating numbers, re-grade transcripts with a different judge tier — re-grading is cheap; re-running trials is not.
+
+Measured cost calibration (first run): ~76k tokens and ~3 minutes per tech-evaluation trial; repo-aware deep-review trials run heavier. Budget accordingly before a full-suite run.
 
 ## Reading the results
 

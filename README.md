@@ -98,7 +98,7 @@ the earlier WHAT-should-this-be exploration and hand off to keel for the
 build question. This preference takes precedence over skill descriptions.
 ```
 
-Keel intentionally does **not** join the injection arms race by shouting its own mandate into every session (see ROADMAP: "aggressive proactive interjection — feasible; taste says no"). The routing choice stays yours.
+Keel intentionally does **not** join the injection arms race by shouting its own mandate into every session (a standing product decision: aggressive proactive interjection is feasible; taste says no). The routing choice stays yours.
 
 ## Under the hood
 
@@ -106,7 +106,6 @@ Keel intentionally does **not** join the injection arms race by shouting its own
 - **[`frameworks/`](frameworks/)** — the named-framework card library: Choose Boring Technology, two-way vs. one-way doors, Conway's Law, YAGNI, Wardley mapping, build-vs-buy, the Accelerate four, unit economics. Loaded at most two per decision, and skills must *reason from* a card's content — citation-as-decoration is a test failure.
 - **[`tests/`](tests/)** — a triggering matrix (does the right skill fire?) and behavioural eval cases with deterministic + LLM-rubric graders. Headline metric: **`pass^5`** — the protocol must hold *every* time, not just once. Evals for the v0.5–0.6 skills are being authored; numbers will be published here when measured, not before.
 - **[`ledger/`](ledger/)** — the memory spec and templates.
-- **[`ROADMAP.md`](ROADMAP.md)** — where this is going, and the "deliberately not building" list.
 
 ## Honest limits
 

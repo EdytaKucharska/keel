@@ -31,6 +31,12 @@ This skill needs three things; get them cheaply:
 
 ## The review protocol
 
+### The evidence rule (governs every lens)
+
+Every finding that enters the ranked list carries its evidence: a `file:line` reference, a command output, a config value, or a search-verified fact with a link. A finding you cannot point at is not a finding — it goes in a separate **"hypotheses to verify"** bucket with the cheapest way to verify it (the query to run, the log to pull, the file to check). This is the honest answer to the strongest critique of AI review: a model will always *say* it checked; evidence is how the user can tell that it did.
+
+Prefer instruments over prose wherever they exist. If the project has logs, APM traces, a dev database you can run `EXPLAIN` against, CI output, or a real bill, use them before claiming a load-shape or cost finding — "this query does a sequential scan on `orders` (EXPLAIN output attached)" outranks "this query looks slow" every time. When no instrument is available, say plainly that the finding is read-not-measured and what measurement would confirm it.
+
 ### Step 1: Map the vessel
 
 Read the repo structure before evaluating anything. Produce the map (persona: a wrong map is worse than no map): the critical path from user-opens-product to user-gets-value, the data and where it lives, the deployment path, the external dependencies, and which parts appear AI-generated. State it back in 6–12 lines. Invite correction.
@@ -101,10 +107,13 @@ Visibly: what you couldn't inspect, what you read-but-didn't-measure, which find
 [The honest headline: sound / sound-with-exceptions / not ready for the stated stake. Plain language.]
 
 ## Ranked findings (blast radius at YOUR stage)
-1. **[Finding]** — [lens] — [why it matters here, one line] — fix: [specific] — effort: [hours/days] — **needed yesterday**
+1. **[Finding]** — [lens] — [why it matters here, one line] — evidence: [file:line / command output / verified source] — fix: [specific] — effort: [hours/days] — **needed yesterday**
 2. ...
-(≤10 items. Needed-yesterday first, then defer-with-trigger items with their triggers named.)
+(≤10 items, each with cited evidence. Needed-yesterday first, then defer-with-trigger items with their triggers named.)
 Also noted, not urgent: [one line, if anything]
+
+## Hypotheses to verify
+[Suspicions without evidence yet — each with the cheapest verification: the query to run, the log to pull, the file to check. Empty is a fine answer.]
 
 ## What's sound
 [Honest list. Real wins named.]

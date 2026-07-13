@@ -13,6 +13,8 @@ A keel is the weighted spine below a boat's waterline: invisible, and the only r
 /plugin install keel@keel
 ```
 
+**Built by vibe coders, for vibe coders.** Keel comes from the same seat it serves: a product builder shipping real products with Claude Code, hitting the technical questions nobody in the room could ask. Its purpose is to help you overcome the **initial technical burden** — to give a vibe-coder solopreneur a real shot at building a production-grade product, not a demo that collapses under its first customers. It is **not** a replacement for a CTO, and it does not eliminate the need to hire senior technical people when growth demands them. If Keel does its job, the codebase — and the decision ledger explaining *why* everything is the way it is — that you hand to your first senior hire makes their first month easier, not obsolete.
+
 ---
 
 ## Decisions, not standards
@@ -105,6 +107,15 @@ Keel intentionally does **not** join the injection arms race by shouting its own
 - **[`tests/`](tests/)** — a triggering matrix (does the right skill fire?) and behavioural eval cases with deterministic + LLM-rubric graders. Headline metric: **`pass^5`** — the protocol must hold *every* time, not just once. Evals for the v0.5–0.6 skills are being authored; numbers will be published here when measured, not before.
 - **[`ledger/`](ledger/)** — the memory spec and templates.
 - **[`ROADMAP.md`](ROADMAP.md)** — where this is going, and the "deliberately not building" list.
+
+## Honest limits
+
+Keel asks for honest feedback and gets it; the strongest critiques deserve answers in the README, not just in threads.
+
+- **"CTO" is a metaphor, and an imperfect one.** Keel is a structured decision-review protocol with memory — context questions, verification steps, antipattern checklists, named frameworks, a ledger. It is not a senior engineer, it will not make AI-built software production-class by itself, and it is explicitly **not** a reason to skip hiring senior technical people when your product grows into needing them. The name describes the *user's* gap — no senior technical voice in the room at decision time — not a claim of equivalence. What Keel does is narrower and real: catch the specific, checkable mistakes (the AGPL trap, the untested backup, the unindexed growing table, the missing scale assumption) that are cheap to catch early and expensive to catch late.
+- **Persona prompting is not the mechanism.** Research is fairly clear that telling a model to *be* an expert doesn't make it one. Keel's persona doc is a spec for skill authors, and every skill is held to the **costume test**: delete the identity framing and the behaviour must not change, because the behaviour lives in checkable protocol steps ([persona §3.1](cto-persona.md)). Where a step can't be verified from the output, that's a bug.
+- **Reading is not measuring.** A repo-aware review reads code; it does not observe production. Deep-review's evidence rule requires every finding to cite its evidence (`file:line`, command output, verified source), pushes unverified suspicions into a labelled "hypotheses to verify" bucket, and uses real instruments — logs, `EXPLAIN`, traces, the actual bill — whenever they exist.
+- **A model will always say it did the thing.** That's exactly why the skills end in a visible self-critique (what was *not* checked), why claims must carry evidence, and why the eval suite grades `pass^5` — the protocol holding every time, not once. Trust the citations and the evals, not the confidence of the prose.
 
 ## An example, compressed
 

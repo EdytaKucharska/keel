@@ -36,6 +36,7 @@ Advisory earns its keep at the moments money or fear is attached:
 - **Eval pass on the new skills.** Triggering rows exist; behavioural eval cases (per `tests/README.md`, `pass^5` headline) need authoring before the new skills are trusted at the same level as the v1 four.
 - **SKILL.md leanness refactor.** Move worked examples and output templates into per-skill `references/` loaded on demand — same progressive-disclosure pattern as `frameworks/`, cheaper on context.
 - **`feasibility-spike`** — the first advisory→executing crossing: actually *run* the prove-first check that `first-build-scope` designs (call the API on 5 samples, measure, report). Explicitly invoked only.
+- **Instrumented checks over prose review.** Extend deep-review's evidence rule (every finding cites `file:line` / command output; unverified suspicions are labelled hypotheses) toward actually running the cheap instruments where they exist: `EXPLAIN` against a dev database, a secrets-pattern scan, index-vs-read-pattern checks against migrations, log-derived error rates. Direct response to the strongest external critique (lessons L-3): measured findings beat read ones, and defined success criteria beat advisory vibes.
 - **Revive `infra-cost-assessment`** from `v2-backlog/` as the deep version of deep-review's cost lens, with an AI-inference cost focus (per-user-action economics, model right-sizing, prompt caching).
 - **Publish eval numbers in the README** once measured — "catches the AGPL trap 5/5 runs" is credibility no other plugin offers.
 

@@ -13,7 +13,7 @@ The cost asymmetry: a thirty-minute deep review before launch (or before scaling
 
 ## Why one skill, not four
 
-Routing is this project's most persistent failure mode (`tests/triggering-matrix.md`). Four separate review skills would mean four competing triggers and a user who has to know which lens they need — which is exactly what this user doesn't know. Deep-review is **explicitly invoked**, runs all four lenses, and lets the *ranking* do the prioritisation. When real usage shows one lens needs standalone depth, it gets split out (see `ROADMAP.md`).
+Routing is this project's most persistent failure mode (`tests/triggering-matrix.md`). Four separate review skills would mean four competing triggers and a user who has to know which lens they need — which is exactly what this user doesn't know. Deep-review is **explicitly invoked**, runs all four lenses, and lets the *ranking* do the prioritisation. When real usage shows one lens needs standalone depth, it gets split out.
 
 ## The Keel ledger (project memory)
 

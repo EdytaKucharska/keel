@@ -13,7 +13,7 @@
 
 ## A-1 — Four lenses in one deep-review pass stay coherent and no single lens needs standalone depth — 2026-07-04
 - **Backs decision:** #1
-- **Revisit trigger:** real usage shows users repeatedly re-invoking deep-review for one lens only (the ROADMAP already earmarks the cost lens → revive `infra-cost-assessment`), OR eval runs show the four-lens report degrading into four mini-reports (`deep-review-prelaunch-gaps.md` rubric dimension 1 failing)
+- **Revisit trigger:** real usage shows users repeatedly re-invoking deep-review for one lens only (the roadmap already earmarks the cost lens → revive `infra-cost-assessment` from `v2-backlog/`), OR eval runs show the four-lens report degrading into four mini-reports (`deep-review-prelaunch-gaps.md` rubric dimension 1 failing)
 - **Status:** open
 
 ## A-2 — `/security-review` remains free, first-party, and good enough to prescribe — 2026-07-04
